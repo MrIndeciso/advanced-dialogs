@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Advanced Dialogs</string>
+
+    <!-- Alert Dialog -->
+    <string name="alertdialog_tvtitle">Title</string>
+    <string name="alertdialog_tvmessage">Message which can be as long as you want as the dialog just resizes according to the length.</string>
+    <string name="alertdialog_bttpos">Accept</string>
+    <string name="alertdialog_bttneg">Refuse</string>
+
+</resources>
