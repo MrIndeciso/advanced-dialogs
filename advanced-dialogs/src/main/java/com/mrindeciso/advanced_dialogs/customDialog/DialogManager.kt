@@ -16,7 +16,7 @@ open class DialogManager(
             impl::onDismiss,
             impl.autoDismiss,
             systematicOperation
-        ) {}
+        ) {}.also { it.show() }
     }
 
     fun <T : ViewBinding> show(impl: DialogInflater<T>): CustomDialog<T> {
@@ -24,7 +24,7 @@ open class DialogManager(
             context,
             impl::render,
             systematicLayoutOperation = systematicOperation
-        ) {}
+        ) {}.also { it.show() }
     }
 
 }

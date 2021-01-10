@@ -40,7 +40,7 @@ abstract class BaseDialog(
         _dialogBuilder.setView(viewRes)
     }
 
-    protected fun show() {
+    protected fun showDialog() {
         _dialog = _dialogBuilder.show()
         _dialog?.setCanceledOnTouchOutside(autoDismiss)
     }

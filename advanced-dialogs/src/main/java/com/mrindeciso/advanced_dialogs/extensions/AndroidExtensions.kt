@@ -15,7 +15,7 @@ fun <T : ViewBinding> AppCompatActivity.showDialog(
         impl::render,
         impl::onDismiss,
         impl.autoDismiss,
-    ) {}
+    ) {}.also { it.show() }
 }
 
 fun <T : ViewBinding> AppCompatActivity.showDialog(
@@ -24,7 +24,7 @@ fun <T : ViewBinding> AppCompatActivity.showDialog(
     return object : CustomDialog<T>(
         this,
         impl::render,
-    ) {}
+    ) {}.also { it.show() }
 }
 
 fun <T : ViewBinding> Fragment.showDialog(
@@ -35,7 +35,7 @@ fun <T : ViewBinding> Fragment.showDialog(
         impl::render,
         impl::onDismiss,
         impl.autoDismiss,
-    ) {}
+    ) {}.also { it.show() }
 }
 
 fun <T : ViewBinding> Fragment.showDialog(
@@ -44,5 +44,5 @@ fun <T : ViewBinding> Fragment.showDialog(
     return object : CustomDialog<T>(
         requireContext(),
         impl::render,
-    ) {}
+    ) {}.also { it.show() }
 }

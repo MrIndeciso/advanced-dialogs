@@ -24,7 +24,8 @@ open class CustomDialog<T : ViewBinding> internal constructor(
         val layout = render(layoutInflater)
         systematicLayoutOperation?.invoke(layout)
         render(layout)
-        show()
     }
+
+    fun show() = showDialog()
 
 }
