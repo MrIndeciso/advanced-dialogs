@@ -13,6 +13,18 @@ inline fun <reified T : View> ViewBinding.forEachOfType(action: (T) -> Unit) {
         ?.forEach(action)
 }
 
+inline fun <reified T : View> ViewBinding.forEachOfType(action: (id: Int, view: T) -> Unit) {
+    (root as? ViewGroup)
+        ?.children
+        ?.filterIsInstance(T::class.java)
+        ?.toList()
+        ?.let { list ->
+            list.forEachIndexed { index, view ->
+                action(list[index].id, view)
+            }
+        }
+}
+
 fun <T : View> ViewBinding.findViewById(@IdRes viewId: Int): T {
     return root.findViewById(viewId)
 }

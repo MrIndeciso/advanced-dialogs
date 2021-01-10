@@ -5,9 +5,9 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.mrindeciso.advanced_dialogs.customDialog.CustomDialog
-import com.mrindeciso.advanced_dialogs.predefinedDialogs.InfoDialog
 import com.mrindeciso.advanceddialogs.databinding.ActivityMainBinding
 import com.mrindeciso.advanceddialogs.databinding.DialogCustomBinding
+import com.mrindeciso.common_dialogs.InfoDialog
 
 class MainActivity: AppCompatActivity() {
 

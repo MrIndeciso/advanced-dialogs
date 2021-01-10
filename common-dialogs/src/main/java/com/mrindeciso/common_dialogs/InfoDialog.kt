@@ -1,4 +1,4 @@
-package com.mrindeciso.advanced_dialogs.predefinedDialogs
+package com.mrindeciso.common_dialogs
 
 import android.content.Context
 import android.graphics.drawable.Drawable
@@ -37,13 +37,13 @@ class InfoDialog(
         negativeButton?.also { layout.adBttNeg.setText(it) }
 
         onPositiveButtonClick?.also { listener ->
-            layout.adBttPos.setOnClickListener { _ ->
+            layout.adBttPos.setOnClickListener {
                 listener(dialogInterface)
                 if (allowAutoDismiss) dialogInterface.dismiss()
             }
         }
         onNegativeButtonClick?.also { listener ->
-            layout.adBttNeg.setOnClickListener { _ ->
+            layout.adBttNeg.setOnClickListener {
                 listener(dialogInterface)
                 if (allowAutoDismiss) dialogInterface.dismiss()
             }
