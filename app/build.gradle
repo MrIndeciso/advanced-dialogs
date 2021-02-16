@@ -7,7 +7,7 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId "com.mrindeciso.advanceddialogs"
+        applicationId "com.github.mrindeciso.advanceddialogs"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
