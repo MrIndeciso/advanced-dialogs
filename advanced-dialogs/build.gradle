@@ -49,6 +49,8 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = "com.github.mrindeciso"
+                artifactId = "advanced-dialogs"
+                version = "0.1"
             }
         }
     }

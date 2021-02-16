@@ -48,6 +48,8 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = "com.github.mrindeciso"
+                artifactId = "common-dialogs"
+                version = "0.1"
             }
         }
     }
