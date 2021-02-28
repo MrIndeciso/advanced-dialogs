@@ -9,6 +9,8 @@ abstract class CustomDialogInterface<out T : ViewBinding> {
 
     fun onDismiss() {}
 
+    var dismiss: () -> Unit = {}
+
     val autoDismiss: Boolean = true
 
 }

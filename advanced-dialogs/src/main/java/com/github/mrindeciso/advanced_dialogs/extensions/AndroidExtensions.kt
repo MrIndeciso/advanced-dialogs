@@ -16,7 +16,10 @@ fun <T : ViewBinding> AppCompatActivity.showDialog(
             impl::render,
             impl::onDismiss,
             impl.autoDismiss,
-    ) {}.also { it.show() }
+    ) {}.also {
+        impl.dismiss = { it.dismiss() }
+        it.show()
+    }
 }
 
 fun <T : ViewBinding> AppCompatActivity.showDialog(
@@ -29,7 +32,9 @@ fun <T : ViewBinding> AppCompatActivity.showDialog(
             render,
             onDismiss,
             autoDismiss
-    ) {}.also { it.show() }
+    ) {}.also {
+        it.show()
+    }
 }
 
 fun <T : ViewBinding> AppCompatActivity.showDialog(
@@ -49,7 +54,10 @@ fun <T : ViewBinding> Fragment.showDialog(
             impl::render,
             impl::onDismiss,
             impl.autoDismiss,
-    ) {}.also { it.show() }
+    ) {}.also {
+        impl.dismiss = { it.dismiss() }
+        it.show()
+    }
 }
 
 fun <T : ViewBinding> Fragment.showDialog(

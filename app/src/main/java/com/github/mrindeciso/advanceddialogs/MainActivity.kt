@@ -1,5 +1,6 @@
 package com.github.mrindeciso.advanceddialogs
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -31,21 +32,25 @@ class MainActivity: AppCompatActivity() {
                     it.textView.text = "Test"
                     it.button.text = "Test"
                 }
-            })
+            }).show()
+        }
+
+        mainBinding.buttonCustomFragment.setOnClickListener {
+            startActivity(Intent(this, CustomDialogDemo::class.java))
         }
 
         mainBinding.buttonAlertDialog.setOnClickListener {
             InfoDialog(this,
-                title = R.string.alertdialog_tvtitle,
-                message = R.string.alertdialog_tvmessage,
-                positiveButton = R.string.alertdialog_bttpos,
-                negativeButton = R.string.alertdialog_bttneg,
-                onPositiveButtonClick = {
-                    Log.i("MainActivity", "Positive button clicked")
-                },
-                onNegativeButtonClick = {
-                    Log.i("MainActivity", "Negative button clicked")
-                }
+                    title = R.string.alertdialog_tvtitle,
+                    message = R.string.alertdialog_tvmessage,
+                    positiveButton = R.string.alertdialog_bttpos,
+                    negativeButton = R.string.alertdialog_bttneg,
+                    onPositiveButtonClick = {
+                        Log.i("MainActivity", "Positive button clicked")
+                    },
+                    onNegativeButtonClick = {
+                        Log.i("MainActivity", "Negative button clicked")
+                    }
             )
 
             MaterialAlertDialogBuilder(this)

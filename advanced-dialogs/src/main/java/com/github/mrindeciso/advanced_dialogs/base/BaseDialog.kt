@@ -45,4 +45,6 @@ abstract class BaseDialog(
         _dialog?.setCanceledOnTouchOutside(autoDismiss)
     }
 
+    protected fun dismissDialog() = _dialog?.dismiss()
+
 }

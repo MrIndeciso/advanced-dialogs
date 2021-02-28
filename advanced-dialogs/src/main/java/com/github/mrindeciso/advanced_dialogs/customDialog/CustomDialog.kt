@@ -14,10 +14,10 @@ open class CustomDialog<T : ViewBinding> internal constructor(
 ) : BaseDialog(context, onDismiss, autoDismiss) {
 
     constructor(
-        context: Context,
-        render: (LayoutInflater) -> T,
-        onDismiss: (() -> Unit)? = null,
-        autoDismiss: Boolean = true,
+            context: Context,
+            render: (LayoutInflater) -> T,
+            onDismiss: (() -> Unit)? = null,
+            autoDismiss: Boolean = true,
     ) : this(context, render, onDismiss, autoDismiss, null)
 
     init {
@@ -27,5 +27,7 @@ open class CustomDialog<T : ViewBinding> internal constructor(
     }
 
     fun show() = showDialog()
+
+    fun dismiss() = dismissDialog()
 
 }
