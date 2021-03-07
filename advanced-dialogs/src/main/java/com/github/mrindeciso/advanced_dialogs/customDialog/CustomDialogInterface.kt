@@ -13,4 +13,6 @@ abstract class CustomDialogInterface<out T : ViewBinding> {
 
     val autoDismiss: Boolean = true
 
+    val makeBackgroundTransparent: Boolean = false
+
 }

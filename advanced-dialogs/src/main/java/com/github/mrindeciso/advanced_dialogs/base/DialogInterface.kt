@@ -4,4 +4,8 @@ interface DialogInterface {
 
     fun dismiss()
 
+    fun show()
+
+    fun overrideBackgroundDrawable()
+
 }

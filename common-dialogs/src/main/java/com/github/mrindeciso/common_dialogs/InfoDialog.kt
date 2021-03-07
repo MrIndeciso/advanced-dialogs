@@ -53,7 +53,7 @@ class InfoDialog(
 
         render(layout)
 
-        showDialog()
+        dialogInterface.show()
     }
 
 }

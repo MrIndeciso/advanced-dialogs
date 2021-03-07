@@ -26,8 +26,10 @@ open class CustomDialog<T : ViewBinding> internal constructor(
         render(layout)
     }
 
-    fun show() = showDialog()
+    fun show() = dialogInterface.show()
 
-    fun dismiss() = dismissDialog()
+    fun dismiss() = dialogInterface.dismiss()
+
+    fun overrideBackgroundDrawable() = dialogInterface.overrideBackgroundDrawable()
 
 }

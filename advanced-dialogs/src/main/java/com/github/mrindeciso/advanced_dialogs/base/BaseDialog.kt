@@ -1,6 +1,8 @@
 package com.github.mrindeciso.advanced_dialogs.base
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import androidx.annotation.LayoutRes
@@ -25,7 +27,18 @@ abstract class BaseDialog(
     }
 
     protected val dialogInterface = object: DialogInterface {
+
         override fun dismiss() = _dialog!!.dismiss()
+
+        override fun show() {
+            _dialog = _dialogBuilder.show()
+            _dialog?.setCanceledOnTouchOutside(autoDismiss)
+        }
+
+        override fun overrideBackgroundDrawable() {
+            _dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        }
+
     }
 
     protected fun <T: ViewBinding> render(binding: T) {
@@ -39,12 +52,5 @@ abstract class BaseDialog(
     protected fun render(@LayoutRes viewRes: Int) {
         _dialogBuilder.setView(viewRes)
     }
-
-    protected fun showDialog() {
-        _dialog = _dialogBuilder.show()
-        _dialog?.setCanceledOnTouchOutside(autoDismiss)
-    }
-
-    protected fun dismissDialog() = _dialog?.dismiss()
 
 }

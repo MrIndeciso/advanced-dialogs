@@ -11,12 +11,17 @@ open class DialogManager(
 
     fun <T : ViewBinding> show(impl: CustomDialogInterface<T>): CustomDialog<T> {
         return object : CustomDialog<T>(
-            context,
-            impl::render,
-            impl::onDismiss,
-            impl.autoDismiss,
-            systematicOperation
-        ) {}.also { it.show() }
+                context,
+                impl::render,
+                impl::onDismiss,
+                impl.autoDismiss,
+                systematicOperation
+        ) {}.also {
+            it.show()
+            if (impl.makeBackgroundTransparent) {
+                it.overrideBackgroundDrawable()
+            }
+        }
     }
 
     fun <T : ViewBinding> show(impl: DialogInflater<T>): CustomDialog<T> {

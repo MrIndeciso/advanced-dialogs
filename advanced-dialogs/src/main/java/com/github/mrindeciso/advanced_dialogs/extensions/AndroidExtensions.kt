@@ -19,6 +19,9 @@ fun <T : ViewBinding> AppCompatActivity.showDialog(
     ) {}.also {
         impl.dismiss = { it.dismiss() }
         it.show()
+        if (impl.makeBackgroundTransparent) {
+            it.overrideBackgroundDrawable()
+        }
     }
 }
 
@@ -57,6 +60,9 @@ fun <T : ViewBinding> Fragment.showDialog(
     ) {}.also {
         impl.dismiss = { it.dismiss() }
         it.show()
+        if (impl.makeBackgroundTransparent) {
+            it.overrideBackgroundDrawable()
+        }
     }
 }
 
