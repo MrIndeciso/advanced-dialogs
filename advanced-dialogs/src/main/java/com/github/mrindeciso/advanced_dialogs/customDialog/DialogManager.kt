@@ -8,7 +8,10 @@ open class DialogManager(
     private val context: Context
 ) : AbstractDialogManager() {
 
-    override var systematicOperation: ((ViewBinding) -> Unit)? = null
+    var systematicOperation: ((ViewBinding) -> Unit)? = null
+
+    override val _systematicOperation: (ViewBinding) -> Unit
+        get() = systematicOperation!!
 
     fun <T : ViewBinding> show(impl: CustomDialogInterface<T>): CustomDialog<T> =
         show(context, impl)

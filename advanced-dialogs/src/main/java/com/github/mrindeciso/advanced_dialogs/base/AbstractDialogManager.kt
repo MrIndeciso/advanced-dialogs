@@ -8,7 +8,7 @@ import com.github.mrindeciso.advanced_dialogs.customDialog.DialogInflater
 
 abstract class AbstractDialogManager {
 
-    abstract var systematicOperation: ((ViewBinding) -> Unit)?
+    protected abstract val _systematicOperation: ((ViewBinding) -> Unit)
 
     open fun <T : ViewBinding> show(
         context: Context,
@@ -19,7 +19,7 @@ abstract class AbstractDialogManager {
             impl::render,
             impl::onDismiss,
             impl.autoDismiss,
-            systematicOperation
+            _systematicOperation
         ) {}.also {
             it.show()
             impl.dismiss = { it.dismiss() }
@@ -33,7 +33,7 @@ abstract class AbstractDialogManager {
         return object : CustomDialog<T>(
             context,
             impl::render,
-            systematicLayoutOperation = systematicOperation
+            systematicLayoutOperation = _systematicOperation
         ) {}.also { it.show() }
     }
 
