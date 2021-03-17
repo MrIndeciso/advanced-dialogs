@@ -8,4 +8,6 @@ interface DialogInterface {
 
     fun overrideBackgroundDrawable()
 
+    fun addLateralInset()
+
 }

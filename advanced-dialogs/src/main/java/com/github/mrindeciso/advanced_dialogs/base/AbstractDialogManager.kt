@@ -25,7 +25,7 @@ abstract class AbstractDialogManager {
         }.also {
             impl.dismiss = { it.dismiss() }
             if (impl.makeBackgroundTransparent) {
-                it.overrideBackgroundDrawable()
+                it.changeBackgroundDrawable(impl.preserveLateralMargin)
             }
         }
     }

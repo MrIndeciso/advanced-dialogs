@@ -20,7 +20,7 @@ fun <T : ViewBinding> AppCompatActivity.showDialog(
         impl.dismiss = { it.dismiss() }
         it.show()
         if (impl.makeBackgroundTransparent) {
-            it.overrideBackgroundDrawable()
+            it.changeBackgroundDrawable(impl.preserveLateralMargin)
         }
     }
 }
@@ -61,7 +61,7 @@ fun <T : ViewBinding> Fragment.showDialog(
         impl.dismiss = { it.dismiss() }
         it.show()
         if (impl.makeBackgroundTransparent) {
-            it.overrideBackgroundDrawable()
+            it.changeBackgroundDrawable(impl.preserveLateralMargin)
         }
     }
 }

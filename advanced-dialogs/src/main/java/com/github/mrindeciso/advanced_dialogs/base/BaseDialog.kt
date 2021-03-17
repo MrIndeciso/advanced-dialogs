@@ -8,6 +8,7 @@ import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
 import androidx.viewbinding.ViewBinding
+import com.github.mrindeciso.advanced_dialogs.R
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 abstract class BaseDialog(
@@ -37,6 +38,10 @@ abstract class BaseDialog(
 
         override fun overrideBackgroundDrawable() {
             _dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        }
+
+        override fun addLateralInset() {
+            _dialog?.window?.setBackgroundDrawableResource(R.drawable._advanceddialogs_lateralinsetdrawable)
         }
 
     }

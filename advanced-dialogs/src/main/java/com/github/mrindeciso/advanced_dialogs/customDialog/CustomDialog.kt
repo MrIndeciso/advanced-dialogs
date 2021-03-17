@@ -30,6 +30,12 @@ open class CustomDialog<T : ViewBinding> internal constructor(
 
     fun dismiss() = dialogInterface.dismiss()
 
-    fun overrideBackgroundDrawable() = dialogInterface.overrideBackgroundDrawable()
+    fun changeBackgroundDrawable(addLateralInset: Boolean = true) {
+        if (addLateralInset) {
+            dialogInterface.addLateralInset()
+        } else {
+            dialogInterface.overrideBackgroundDrawable()
+        }
+    }
 
 }

@@ -7,7 +7,7 @@ import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import com.github.mrindeciso.advanced_dialogs.base.BaseDialog
 import com.github.mrindeciso.advanced_dialogs.base.DialogInterface
-import com.github.mrindeciso.advanced_dialogs.databinding.AdAlertDialogBinding
+import com.github.mrindeciso.common_dialogs.databinding.AdAlertDialogBinding
 
 class InfoDialog(
         context: Context,
