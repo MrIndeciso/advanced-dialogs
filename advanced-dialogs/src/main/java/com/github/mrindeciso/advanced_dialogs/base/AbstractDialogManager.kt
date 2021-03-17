@@ -21,12 +21,12 @@ abstract class AbstractDialogManager {
                 impl.autoDismiss,
                 _systematicOperation
         ) {}.also {
+            it.show()
+        }.also {
             impl.dismiss = { it.dismiss() }
             if (impl.makeBackgroundTransparent) {
                 it.overrideBackgroundDrawable()
             }
-        }.also {
-            it.show()
         }
     }
 
