@@ -15,17 +15,18 @@ abstract class AbstractDialogManager {
         impl: CustomDialogInterface<T>
     ): CustomDialog<T> {
         return object : CustomDialog<T>(
-            context,
-            impl::render,
-            impl::onDismiss,
-            impl.autoDismiss,
-            _systematicOperation
+                context,
+                impl::render,
+                impl::onDismiss,
+                impl.autoDismiss,
+                _systematicOperation
         ) {}.also {
-            it.show()
             impl.dismiss = { it.dismiss() }
             if (impl.makeBackgroundTransparent) {
                 it.overrideBackgroundDrawable()
             }
+        }.also {
+            it.show()
         }
     }
 
